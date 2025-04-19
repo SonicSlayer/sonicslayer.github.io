@@ -1,0 +1,110 @@
+/* Базовые стили */
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* CRT-эффект (мерцание + scanlines) */
+.crt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.1) 50%, 
+        transparent 50%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+    pointer-events: none;
+    z-index: 9999;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Glitch-текст */
+.glitch-text {
+    position: relative;
+    font-size: 3rem;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 0 #f0f, -2px 0 #0ff; }
+    25% { transform: skew(10deg); }
+    50% { text-shadow: -3px 0 #f0f, 3px 0 #0ff; }
+    100% { text-shadow: 1px 0 #f0f, -1px 0 #0ff; }
+}
+
+/* Анимация печатающегося текста */
+.typing-text {
+    overflow: hidden;
+    border-right: 2px solid #0f0;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #0f0 }
+}
+
+/* Навигация */
+.cyber-nav a {
+    color: #0f0;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.cyber-nav a:hover {
+    text-shadow: 0 0 5px #0f0;
+}
+
+/* Lain в углу */
+.lain-character {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    z-index: 100;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.lain-character:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Форма */
+.glitch-input {
+    background: #111;
+    border: 1px solid #0f0;
+    color: #0f0;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.glitch-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #0f0;
+}
