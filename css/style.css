@@ -1,110 +1,160 @@
-/* Базовые стили */
-body {
-    background-color: #000;
+/* Добавляем новые стили к существующим */
+
+/* Стили для кнопки терминала */
+.glitch-link {
+    background: none;
+    border: none;
     color: #0f0;
     font-family: 'Courier New', monospace;
-    margin: 0;
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* CRT-эффект (мерцание + scanlines) */
-.crt-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0.1) 50%, 
-        transparent 50%),
-        repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3) 1px,
-            transparent 1px,
-            transparent 2px
-        );
-    pointer-events: none;
-    z-index: 9999;
-    animation: flicker 0.1s infinite alternate;
-}
-
-@keyframes flicker {
-    0% { opacity: 0.8; }
-    100% { opacity: 1; }
-}
-
-/* Glitch-текст */
-.glitch-text {
-    position: relative;
-    font-size: 3rem;
-    animation: glitch 2s infinite;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 2px 0 #f0f, -2px 0 #0ff; }
-    25% { transform: skew(10deg); }
-    50% { text-shadow: -3px 0 #f0f, 3px 0 #0ff; }
-    100% { text-shadow: 1px 0 #f0f, -1px 0 #0ff; }
-}
-
-/* Анимация печатающегося текста */
-.typing-text {
-    overflow: hidden;
-    border-right: 2px solid #0f0;
-    white-space: nowrap;
-    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #0f0 }
-}
-
-/* Навигация */
-.cyber-nav a {
-    color: #0f0;
-    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
     margin-right: 15px;
-    transition: 0.3s;
+    text-decoration: none;
+    padding: 5px 10px;
 }
 
-.cyber-nav a:hover {
+.glitch-link:hover {
     text-shadow: 0 0 5px #0f0;
+    background: rgba(0, 255, 0, 0.1);
 }
 
-/* Lain в углу */
-.lain-character {
+/* Окно командной строки */
+.cmd-window {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 150px;
-    z-index: 100;
-    opacity: 0.8;
-    transition: 0.5s;
-}
-
-.lain-character:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-/* Форма */
-.glitch-input {
-    background: #111;
-    border: 1px solid #0f0;
-    color: #0f0;
-    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background: #000;
+    border: 2px solid #0f0;
+    z-index: 10000;
     font-family: 'Courier New', monospace;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
-.glitch-input:focus {
+.cmd-header {
+    background: #0f0;
+    color: #000;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.cmd-close {
+    background: #f00;
+    color: white;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.cmd-body {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: #000;
+    color: #0f0;
+}
+
+.cmd-history {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.cmd-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.cmd-input {
+    background: transparent;
+    border: none;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    flex-grow: 1;
     outline: none;
-    box-shadow: 0 0 10px #0f0;
+    margin-left: 5px;
+}
+
+/* Окно Windows 98 */
+.win98 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 640px;
+    height: 480px;
+    background: #008080;
+    border: 3px outset #fff;
+    z-index: 10001;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.win98-header {
+    background: #000080;
+    color: white;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.win98-close {
+    background: #c0c0c0;
+    color: #000;
+    border: 1px solid #fff;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+}
+
+.win98-desktop {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80px);
+    gap: 20px;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+}
+
+.win98-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.win98-icon:hover {
+    background: rgba(0,0,128,0.5);
+}
+
+.win98-icon img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+}
+
+/* Анимации */
+@keyframes win98-boot {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.win98 {
+    animation: win98-boot 0.5s ease-out;
 }

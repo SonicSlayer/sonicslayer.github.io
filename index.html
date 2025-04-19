@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONICSLAYER</title>
+    <title>DIGITAL REALM :: EXPERIMENTS LAIN</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
 
     <!-- Главный терминал -->
     <main class="terminal">
-        <div class="glitch-text" data-text="WELCOME TO SONICSLAYER PORTFOLIO">
-            WELCOME TO MY SITE
+        <div class="glitch-text" data-text="WELCOME TO THE WIRED">
+            WELCOME TO THE WIRED
         </div>
         <p class="typing-text">> INITIALIZING USER PORTFOLIO...</p>
         
@@ -21,32 +21,63 @@
         <nav class="cyber-nav">
             <a href="#about" class="glitch-link">[ABOUT]</a>
             <a href="#projects" class="glitch-link">[PROJECTS]</a>
-            <a href="#contact" class="glitch-link">[CONTACT]</a>
+            <button id="open-cmd-btn" class="glitch-link">[TERMINAL]</button>
         </nav>
 
         <!-- Секции -->
         <section id="about" class="hidden">
             <h2>> USER PROFILE</h2>
-            <p>> NAME: SONICSLAYER</p>
-            <p>> ROLE: YOUTUBER, PROGRAMMER</p>
-            <p>> STATUS: CONNECTED TO INTERNET</p>
+            <p>> NAME: [YOUR NAME]</p>
+            <p>> ROLE: DIGITAL SHAMAN</p>
+            <p>> STATUS: CONNECTED TO THE WIRED</p>
         </section>
 
         <section id="projects" class="hidden">
             <h2>> DATA FRAGMENTS</h2>
-            <div class="project" data-glitch="PROJECT_01.EXE">SLAYERSQUAD</div>
-            <div class="project" data-glitch="YOUTUBE.BIN">SONICSLAYER YOUTUBE</div>
-            <div class="project" data-glitch="GITHUB.HTML">GITHUB</div>
-        </section>
-
-        <section id="contact" class="hidden">
-            <h2>> CONNECTION PROTOCOL</h2>
-            <form class="cyber-form">
-                <input type="text" placeholder="> ENTER YOUR MESSAGE..." class="glitch-input">
-                <button type="submit">SEND</button>
-            </form>
+            <div class="project" data-glitch="PROJECT_01.EXE">WEB DESIGN</div>
+            <div class="project" data-glitch="GLITCH_ART.BIN">GRAPHICS</div>
+            <div class="project" data-glitch="CYBERPUNK.HTML">CODE</div>
         </section>
     </main>
+
+    <!-- Окно командной строки -->
+    <div id="cmd-window" class="cmd-window hidden">
+        <div class="cmd-header">
+            <span>Command Processor</span>
+            <button id="close-cmd-btn" class="cmd-close">X</button>
+        </div>
+        <div class="cmd-body">
+            <div class="cmd-history">
+                <p>Microsoft(R) Windows 98<br>(C)Copyright Microsoft Corp 1981-1998.<br><br>C:\></p>
+            </div>
+            <div class="cmd-input-line">
+                <span>C:\></span>
+                <input type="text" id="cmd-input" class="cmd-input" autofocus>
+            </div>
+        </div>
+    </div>
+
+    <!-- Окно Windows 98 -->
+    <div id="win98" class="win98 hidden">
+        <div class="win98-header">
+            <span>Windows 98</span>
+            <button id="close-win98-btn" class="win98-close">X</button>
+        </div>
+        <div class="win98-desktop">
+            <div class="win98-icon" data-url="https://github.com">
+                <img src="icons/github.ico" alt="GitHub">
+                <span>GitHub</span>
+            </div>
+            <div class="win98-icon" data-url="https://t.me">
+                <img src="icons/telegram.ico" alt="Telegram">
+                <span>Telegram</span>
+            </div>
+            <div class="win98-icon" data-url="https://twitter.com">
+                <img src="icons/twitter.ico" alt="Twitter">
+                <span>Twitter</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Анимированная Lain в углу -->
     <div class="lain-character">
