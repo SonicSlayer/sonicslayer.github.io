@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL REALM :: EXPERIMENTS LAIN</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- CRT-эффект поверх всего -->
+    <div class="crt-overlay"></div>
+
+    <!-- Главный терминал -->
+    <main class="terminal">
+        <div class="glitch-text" data-text="WELCOME TO THE WIRED">
+            WELCOME TO THE WIRED
+        </div>
+        <p class="typing-text">> INITIALIZING USER PORTFOLIO...</p>
+        
+        <!-- Навигация -->
+        <nav class="cyber-nav">
+            <a href="#about" class="glitch-link">[ABOUT]</a>
+            <a href="#projects" class="glitch-link">[PROJECTS]</a>
+            <a href="#contact" class="glitch-link">[CONTACT]</a>
+        </nav>
+
+        <!-- Секции -->
+        <section id="about" class="hidden">
+            <h2>> USER PROFILE</h2>
+            <p>> NAME: [YOUR NAME]</p>
+            <p>> ROLE: DIGITAL SHAMAN</p>
+            <p>> STATUS: CONNECTED TO THE WIRED</p>
+        </section>
+
+        <section id="projects" class="hidden">
+            <h2>> DATA FRAGMENTS</h2>
+            <div class="project" data-glitch="PROJECT_01.EXE">WEB DESIGN</div>
+            <div class="project" data-glitch="GLITCH_ART.BIN">GRAPHICS</div>
+            <div class="project" data-glitch="CYBERPUNK.HTML">CODE</div>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2>> CONNECTION PROTOCOL</h2>
+            <form class="cyber-form">
+                <input type="text" placeholder="> ENTER YOUR MESSAGE..." class="glitch-input">
+                <button type="submit">SEND</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Анимированная Lain в углу -->
+    <div class="lain-character">
+        <img src="images/lain.gif" alt="Lain">
+    </div>
+
+    <!-- Скрипты -->
+    <script src="js/script.js"></script>
+</body>
+</html>
